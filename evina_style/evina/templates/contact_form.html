@@ -1,0 +1,52 @@
+{% load static %}
+{% block page_content %}
+
+<div class="contact_form content_section">
+<div class="container">
+<div class="row">
+<div class="col-md-7">
+<div id="note"></div>
+<div id="fields">
+
+<form name="sentMessage" method = "post" action = "" id="contactForm" novalidate>
+{% csrf_token %}
+<div class="row">
+<div class="form-group main_color2">
+{{form.name}}
+<p class="help-block main_color2"></p>
+</div>
+<div class="form-group">
+    {{form.email}}
+<!--<input type="email"  class="form-control" id="email">-->
+
+<p class="help-block main_color2"></p>
+</div>
+<div class="form-group">
+<!--<input type="tel" class="form-control phone"  id="phone" required data-validation-required-message="Введите телефон">-->
+{{form.phone}}
+<p class="help-block main_color2"></p>
+</div>
+<div class="form-group">
+<!--<textarea class="form-control" id="message" required data-validation-required-message="Введите сообщение">Услуга, желаемая дата и время *  </textarea>-->
+{{form.message}}
+    <p class="help-block main_color2">* Обязательные поля</p>
+</div>
+<div class="clearfix"></div>
+<div id="success"></div>
+<input class="send_btn" type="submit" value="Отправить">
+</div>
+</form>
+
+</div>
+</div>
+<div class="col-md-5 contact_info">
+<p><i class="fa fa-home"></i>ул. Алеся Гаруна д.28, г. Минск</p>
+<p><a href ="tel:+375291852479" rel="nofollow"><i class="fa fa-phone"></i>+375 29 185 24 79</a></p>
+<p><a href ="viber://chat?number=375291852479" rel="nofollow"><i class="fa fa-mobile"></i>VIBER</a></p>
+<p><a href="whatsapp://send?text=Здравствуйте! Меня интересует ваши услуги:&phone=+375295170962&abid=+375295170962" rel="nofollow"><i class="fa fa-mobile" aria-hidden="true"></i>Whatsapp</a></p>
+<p><i class="fa fa-envelope"></i><a href="mailto:je-ne-ch-ka@mail.ru" rel="nofollow"><i class="fa fa-envelope"></i>Написать email</a></p>
+</div>
+</div>
+</div><!--container-->
+</div>
+{% endblock %}

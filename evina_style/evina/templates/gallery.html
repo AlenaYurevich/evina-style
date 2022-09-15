@@ -1,0 +1,17 @@
+{% load static %}
+<div class="gallery_block">
+
+
+{% for image in images %}
+<div class="col-md-2 service">
+<div class="img_block hover_img">
+<a href= "{% static image.image %}" class="prettyPhoto">
+<img src= "{% static image.image_min %}" alt="{{image.alt}}" />
+<div class="item_fadder"></div>
+<div class="link_ico"><i class="fa fa-search"></i></div>
+</a>
+</div>
+</div>
+{% endfor %}
+
+</div><!-- end .gallery block -->

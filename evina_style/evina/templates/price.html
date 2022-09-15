@@ -1,0 +1,9 @@
+<div class= "indent">
+<table class ="table">
+<thead><tr> <th>Услуга</th><th>Цена, руб.</th></tr></thead>
+<tbody>
+    {% for service in services %}
+        <tr> <th>{{service.title}}</th><td>{{service.price}}</td></tr>
+    {% endfor %}
+</tbody> </table>
+</div>
