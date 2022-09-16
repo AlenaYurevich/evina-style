@@ -18,7 +18,8 @@
       {% endfor %}
   </small>
   <img src="{% static post.image1 %}" alt="Макияж в Минске. Выезд на дом." />
-   <p>{{ post.body | linebreaks }}</p>
+  <p>{{ post.title | linebreaks }}</p>
+  <p>{{ post.body | linebreaks }}</p>
 
 
 
