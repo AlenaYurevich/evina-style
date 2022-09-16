@@ -1,7 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
 {% block page_content %}
-<div class="col-md-8 offset-md-2">
-  <h1>{{ post.title }}</h1>
+<section class="page_section">
+<div class="portfolio-modal modal-content">
+<div class="content_section container">
+   <div class="row">
+       <div class="posts_block">
+  <h2 class="main_color1">{{ post.title }}</h2>
+    <h3>{{ post.subtitle }}</h3>
   <small>
       {{ post.created_on.date }} |
       Категории:
@@ -11,7 +17,11 @@
       </a>
       {% endfor %}
   </small>
-  <p>{{ post.body | linebreaks }}</p>
+  <img src="{% static post.image1 %}" alt="Макияж в Минске. Выезд на дом." />
+   <p>{{ post.body | linebreaks }}</p>
+
+
+
 <h3>Оставьте комментарий:</h3>
     <form action = '/blog/{{post.pk}}/' method="post">
      {% csrf_token %}
@@ -33,4 +43,8 @@
     <hr>
 {% endfor %}
 </div>
+</div>
+</div>
+</div>
+</section>
 {% endblock %}
